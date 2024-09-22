@@ -1,0 +1,15 @@
+# C Code related
+c_proj/BUILD
+c_proj/*.txt
+c_proj/*.o
+cc65
+
+# Decomp related
+family_basic_decomp/*
+
+# CHR
+!family_basic_decomp/*.psd
+!family_basic_decomp/*.bmp
+
+# Documentation
+docs/*
