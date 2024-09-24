@@ -1,0 +1,3 @@
+[submodule "c_proj/cc65"]
+	path = c_proj/cc65
+	url = https://github.com/cc65/cc65.git
