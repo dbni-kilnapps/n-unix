@@ -14,14 +14,15 @@ BUILD_DIR = build
 default: clean $(BUILD_DIR) $(BUILD_DIR)/entry.o $(BUILD_DIR)/$(NAME).nes
 
 clean:
-	@rm -rf $(BUILD_DIR)/*.nes
+	@rm -rf $(BUILD_DIR)/*
+	@rm -rf $(BUILD_DIR)/debug/*
 
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
 	@mkdir -p $(BUILD_DIR)/debug
 
 # Compile C
-$(BUILD_DIR)/$(NAME).s: SRC/$(NAME).c
+$(BUILD_DIR)/$(NAME).s: SRC/$(NAME).c 
 	$(CC65) -Oirs $^ -o $@ --add-source
 
 # Assemble required files
@@ -32,4 +33,4 @@ $(BUILD_DIR)/entry.o: entry.s $(CHR)
 	$(CA65) $< -o $@
 
 $(BUILD_DIR)/$(NAME).nes: $(BUILD_DIR)/$(NAME).o $(BUILD_DIR)/entry.o
-	$(LD65) -o $@ -C $(CFG) $^
+	$(LD65) -o $@ -C $(CFG) $^ nes.lib

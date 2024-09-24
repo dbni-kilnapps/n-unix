@@ -1,9 +1,11 @@
-//volatile addresses
 #define RAM_START ((volatile unsigned char*)0x0000)
 #define RAM_END ((volatile unsigned char*)0x07ff)
 #define PRG_RAM_START ((volatile unsigned char*)0x6000) // battery backed
 #define PRG_RAM_END ((volatile unsigned char*)0x7fff)
 #define VERSION 4 // version number
+
+unsigned short checkRamRemaining();
+unsigned short checkStorageRemaining();
 
 unsigned short checkRamRemaining(){
     unsigned char value;

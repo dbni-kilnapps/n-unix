@@ -1,6 +1,6 @@
-.export __STARTUP__:absolute=1
+.import   _main
 
-.import _main
+.export   __STARTUP__ : absolute = 1
 
 .segment "HEADER"
     .byte $4E,$45,$53,$1A
@@ -10,8 +10,8 @@
     .byte $00&$F0 ; Mapper
     .res 8,0
 
-
 .segment "STARTUP"
+
 
 .segment "CODE"
 irq:
