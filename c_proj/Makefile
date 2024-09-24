@@ -3,7 +3,7 @@ CA65 = cc65/bin/ca65
 CL65 = cc65/bin/cl65
 LD65 = cc65/bin/ld65
 NAME = nunix
-CFG = nrom_32k_vert.cfg
+CFG = nes_memory.cfg
 CHR = basic.chr
 
 BUILD_DIR = build
@@ -34,4 +34,4 @@ $(BUILD_DIR)/$(NAME).s: SRC/$(NAME).c
 # 	$(CA65) $< -o $@
 
 $(BUILD_DIR)/$(NAME).nes: $(BUILD_DIR)/$(NAME).s entry.s $(CHR)
-	$(CL65) --target nes $(BUILD_DIR)/$(NAME).s entry.s -o $@
+	$(CL65) $(BUILD_DIR)/$(NAME).s entry.s -o $@ -C $(CFG)
