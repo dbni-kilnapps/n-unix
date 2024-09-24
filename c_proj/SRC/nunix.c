@@ -1,4 +1,4 @@
-#include "../LIB/fambasiclib.h"
+#include "../lib/fambasiclib.h"
 
 void main(void){
     while(1){
