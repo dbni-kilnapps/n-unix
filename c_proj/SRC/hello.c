@@ -4,8 +4,8 @@
  *	Doug Fraker 2018
  */
 
-#include "../LIB/neslib.h"
-#include "../LIB/nesdoug.h"
+#include "../LIB/bak/neslib.h"
+#include "../LIB/bak/nesdoug.h"
 
 #define BLACK 0x0f
 #define DK_GY 0x00
