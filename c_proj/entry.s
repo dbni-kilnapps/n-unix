@@ -2,6 +2,7 @@
 
 .export   __STARTUP__ : absolute = 1
 
+
 .segment "HEADER"
     .byte $4E,$45,$53,$1A
     .byte $02 ; PRG Banks
@@ -14,7 +15,6 @@
 
 
 .segment "CODE"
-irq:
 reset:
   sei		; disable IRQs
   cld		; disable decimal mode
@@ -69,12 +69,16 @@ enable_rendering:
   sta $2000
   lda #%00010000	; Enable Sprites
   sta $2001
+  
 
   jmp _main
-
   .include "LIB/fambasiclib.s"
 
+
 nmi:
+    rti
+
+irq:
     rti
 
 .segment "RODATA"

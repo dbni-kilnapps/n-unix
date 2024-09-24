@@ -1,0 +1,17 @@
+0-3: NES
+PRG Size: 0x02 - 32KB
+CHR Size: 0x01 - 8KB
+Flags 6:
+0000 0011
+- Vertical Mirroring
+- Battery Backed PRG RAM
+Flags 7:
+0000 0000
+Flags 8:
+0000 0000
+Flags 9:
+0000 0000
+Flags 10:
+0000 0000
+11-15 Padding
+Nothing

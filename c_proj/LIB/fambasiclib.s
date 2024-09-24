@@ -1,11 +1,12 @@
 .export _read_keyboard_state
 
 
-
+.segment "ZEROPAGE"
 ; Keyboard buffer variable at $0634 in RAM
-KEYBOARD_STATE: .res 9, $00
-MODIFIER_HELD = $18  ; New variable to track modifier state
+KEYBOARD_STATE: .res 9
+MODIFIER_HELD: .res 1 ; New variable to track modifier state
 
+.segment "CODE"
 ; Family BASIC Routines
 _read_keyboard_state:
     ldx #0 ; Loop counter

@@ -1,1 +1,1 @@
-void __fastcall__ read_keyboard_state();
+void __fastcall__ read_keyboard_state(void);

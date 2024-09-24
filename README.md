@@ -11,6 +11,7 @@ TBD
 Make sure to include and build the cc65 toolchain
 
 ```bash
+cd c_proj
 git submodule update --init --recursive
 cd cc65
 make -j8
