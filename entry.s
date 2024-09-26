@@ -64,15 +64,18 @@ load_palettes:
   cpx #$20
   bne @loop
 
+set_bg_table:
+    lda #%00011000
+    sta $2000
+
 enable_rendering:
   lda #%10000000	; Enable NMI
   sta $2000
-  lda #%00010000	; Enable Sprites
+  lda #%00011110	; Enable Sprites
   sta $2001
   
-
   jmp _main
-  .include "LIB/fambasiclib.s"
+  .include "lib/fambasic_lib.s"
 
 
 nmi:
@@ -82,6 +85,7 @@ irq:
     rti
 
 .segment "RODATA"
+; default palette
 palettes:
   ; Background Palette
   .byte $0f, $30, $21, $02
@@ -95,6 +99,8 @@ palettes:
   .byte $0f, $30, $27, $16
   .byte $0f, $29, $36, $17
 
+
+
 .segment "VECTORS"
     .word nmi	;$fffa vblank nmi
     .word reset	;$fffc reset
@@ -103,4 +109,4 @@ palettes:
 
 .segment "CHARS"
 
-	.incbin "basic.chr"
+	.incbin "chr/basic.chr"
